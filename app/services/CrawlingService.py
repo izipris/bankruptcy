@@ -37,24 +37,18 @@ def get_bankrupts(ids):
 
 
 def construct_person(browser, person):
-    person.set_case_id(browser.find_element_by_id('bnrTikTopInfo_grdInfo_lblTikNoKanar_0').get_attribute('value'))
-    person.set_cancel_reason(
-        browser.find_element_by_id('lstTikGeneralDetails_txtCancelReason').get_attribute('value'))
+    person.set_case_id(browser.find_element_by_id('bnrTikTopInfo_grdInfo_lblTikNoKanar_0').text)
+    person.set_cancel_reason(browser.find_element_by_id('lstTikGeneralDetails_txtCancelReason').get_attribute('value'))
     person.set_case_status(browser.find_element_by_id('lstTikGeneralDetails_txtTikStatus').get_attribute('value'))
     person.set_authority(browser.find_element_by_id('lstTikGeneralDetails_txtRashutMetapelet').get_attribute('value'))
-    person.set_cancel_date(
-        browser.find_element_by_id('lstTikGeneralDetails_txtTzavCancellationDate').get_attribute('value'))
-    person.set_bankruptcy_date(
-        browser.find_element_by_id('lstTikGeneralDetails_txtTzavPshitaDate').get_attribute('value'))
-    person.set_concentration_date(
-        browser.find_element_by_id('lstTikGeneralDetails_txtTzavKinusDate').get_attribute('value'))
+    person.set_cancel_date(browser.find_element_by_id('lstTikGeneralDetails_txtTzavCancellationDate').get_attribute('value'))
+    person.set_bankruptcy_date( browser.find_element_by_id('lstTikGeneralDetails_txtTzavPshitaDate').get_attribute('value'))
+    person.set_concentration_date(browser.find_element_by_id('lstTikGeneralDetails_txtTzavKinusDate').get_attribute('value'))
 
 
 def construct_company(browser, company):
-    company.set_case_id(browser.find_element_by_id('bnrTikTopInfo_grdInfo_lblTikNoKanar_0').get_attribute('value'))
-    company.set_cancel_reason(browser.find_element_by_id('lstTikGeneralDetails_txtTikStatus').get_attribute('value'))
-    company.set_case_status(
-        browser.find_element_by_id('lstTikGeneralDetails_txtRashutMetapelet').get_attribute('value'))
-    company.set_authority(browser.find_element_by_id('lstTikGeneralDetails_txtTzavPshitaDate').get_attribute('value'))
-    company.set_cancel_date(
-        browser.find_element_by_id('lstTikGeneralDetails_txtTzavCancellationDate').get_attribute('value'))
+    company.set_case_id(browser.find_element_by_id('bnrTikTopInfo_grdInfo_lblTikNoKanar_0').text)
+    company.set_case_status(browser.find_element_by_id('lstTikGeneralDetails_txtTikStatus').get_attribute('value'))
+    company.set_authority(browser.find_element_by_id('lstTikGeneralDetails_txtRashutMetapelet').get_attribute('value'))
+    company.set_destruction_date(browser.find_element_by_id('lstTikGeneralDetails_txtTzavPshitaDate').get_attribute('value'))
+    company.set_delay_date(browser.find_element_by_id('lstTikGeneralDetails_txtTzavCancellationDate').get_attribute('value'))
