@@ -1,0 +1,7 @@
+<h1>Add a list of IDs, separated by new line:</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="id_list"></label><textarea style="width: 200px; height: 400px;" id="id_list" name="id_list"></textarea>
+    <br /><br />
+    <input type="submit" value="Crawl!">
+</form>
